@@ -13,9 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: yu hua's page
+title: yu hua's blog
 author: Yu hua
-description: Minimal, responsive Jekyll theme for hackers.
+description: My development diary
 #baseurl: "ss12f32v.github.io/" # the subpath of your site, e.g. /blog
 #url: "https://ss12f32v.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en
