@@ -14,10 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: yu hua's page
-author: Yous
+author: Yu hua
 description: Minimal, responsive Jekyll theme for hackers.
 baseurl: "ss12f32v.github.io/" # the subpath of your site, e.g. /blog
-url: "https://yous.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ss12f32v.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en
 timezone: UTC+8
 theme: jekyll-whiteglass
