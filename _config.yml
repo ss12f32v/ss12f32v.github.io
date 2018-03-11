@@ -13,7 +13,7 @@ resume_avatar:                  "true"
 resume_name:                    "Jason chen"
 resume_title:                   ""
 resume_contact_email:           "cloudstrife60138@gmail.com"
-resume_header_intro: "<p>Interested in Data Science, Natural Language Understanding and Deep Reinforcement learning. Looking for a MS degree in C.S or data science now.<p>"
+resume_header_intro: "<p>I am a senior undergraduate student at National Cheng Kung University.<br>Interested in Deep Reinforcement learning and Natural Language Understanding.<br>Currently attending several Kaggle's competition.<p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
