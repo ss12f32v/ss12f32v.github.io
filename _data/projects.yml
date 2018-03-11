@@ -2,15 +2,29 @@
 # uncomment the urls if you wish to display them, and add your own URL
 
 # donutfinder.io
-- project: donutfinder.io
-  role: Founder & Primary Developer
-  duration: 2012 &mdash; Present
+- project: Custom Traffic Light
+  role: Programmer
+  duration: 2017/3 &mdash; 2017/6
   # url: "#"
-  description: Donut Locator is an open source node/ember app that lets users find donuts within a defined radius from their home.
+  description: Cooperate with the NCKU Industrial Design Department’s student and in charge of the program design part.
 
 #Springfield Donut Eater's User Group
-- project: Springfield Donut Eater's User Group
-  role: Co-Founder & Organizer
-  duration: 2007 &mdash; Present
+- project: A Deep Reinforcement Learning-based Dialogue System
+  role: Backend Programmer
+  duration: 2017/7 &mdash; 2018/1
   # url: "#"
-  description: DEUG is a local monthly meetup in Springfield where we share all the latest tips and tricks for dat donut lifestyle. I organize the group, and typically eat most of the donuts.
+  description: Try to combine chat-bot with Deep Learning aWithout using rule-based method 
+              to determine what user said. The system include
+              including NLU, RL and State tracking. My contribution includes development 
+              of principal components NLU, RL(DQN).
+ 
+#Springfield Donut Eater's User Group
+- project: Music Chat-bot
+  role: Programmer
+  duration: 2017/4 &mdash; 2017/6
+  url: "https://github.com/ss12f32v/Toc-project-telegram-chatbot-with-api.ai"
+  description: This project is the final project in Theory of Computation. Trying to use state machine to represent user's state.
+               The chat-bot support three function.\n 1. Find album 2. Music Recommendation 3. Find artist top track
+
+ 
+- 
