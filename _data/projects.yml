@@ -3,11 +3,11 @@
 
 
 #Springfield Donut Eater's User Group
-- project: A Deep Reinforcement Learning-based Dialogue System
+- project: A Deep Reinforcement Learning &ndash based Dialogue System
   role: Backend Programmer
   duration: 2017/7 &mdash; 2018/1
   # url: "#"
-  description: Try to combine chat-bot with Deep Learning aWithout using rule-based method 
+  description: Try to combine chat-bot with Deep Learning without using rule-based method 
               to determine what user said. The system include
               including NLU, RL and State tracking. My contribution includes development 
               of principal components NLU, RL(DQN).
