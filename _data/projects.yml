@@ -18,9 +18,9 @@
   duration: 2017/4 &mdash; 2017/6
   url: "https://github.com/ss12f32v/Toc-project-telegram-chatbot-with-api.ai"
   description: This project is the final project in Theory of Computation. Trying to use state machine to represent user's state.
-               The chat-bot support three function. 1. Find album 2. Music Recommendation 3. Find artist top track
+               The chat &ndash bot support three function. 1. Find album 2. Music Recommendation 3. Find artist top track
 
- - project: Custom Traffic Light
+- project: Custom Traffic Light
   role: Programmer
   duration: 2017/3 &mdash; 2017/6
   # url: "#"
