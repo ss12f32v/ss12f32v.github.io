@@ -153,13 +153,16 @@ author_profile: true
                     //   var field4 = $("input[type='radio'][name='worst_choice']:checked").val();
                     console.log("In hit",better_sample);
                     var form = $("#submit-form");
+  
                     addHiddenField(form, 'assignmentId', state.assignmentId);
+                    console.log("hitId",gup("hitId")
+
                     console.log(state.assignmentId)
                     console.log(state.workerId)
 
                     addHiddenField(form, 'workerId', state.workerId);
-                    addHiddenField(form, 'result', better_sample);
-                    submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit"
+                    // addHiddenField(form, 'result', better_sample);
+                    submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit";
                     $("#submit-form").attr("action", submitUrl); 
                     $("#submit-form").attr("method", "POST"); 
                     $("#submit-form").submit();
