@@ -155,19 +155,22 @@ author_profile: true
 
 
                     var form = $("#submit-form");
-                    // addHiddenField(form, 'assignmentId', state.assignmentId);
-                    // addHiddenField(form, 'workerId', state.workerId);
-                    // addHiddenField(form, 'result', 'better_sample');
+                    addHiddenField(form, 'assignmentId', state.assignmentId);
+                    addHiddenField(form, 'workerId', state.workerId);
+                    var results = {
+                        'inputs': better_sample,
+                    }; 
+                    addHiddenField(form, 'result',  JSON.stringify(results));
 
-                    form.append('assignmentId',state.assignmentId);
-                    form.append('workerId',state.workerId);
-                    form.append('result', better_sample);
+                    // form.append('assignmentId',state.assignmentId);
+                    // form.append('workerId',state.workerId);
+                    // form.append('result', better_sample);
 
                     
 
-                    console.log("hitid",gup("hitId"))
-                    console.log(state.assignmentId)
-                    console.log(state.workerId)
+                    // console.log("hitid",gup("hitId"))
+                    // console.log(state.assignmentId)
+                    // console.log(state.workerId)
 
                     
                     submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit";
@@ -364,5 +367,8 @@ author_profile: true
                   </strong>
               </p>
               <button type="submit" onclick="myGetItem()">Submit</button>
-          </body>
+              <form id="submit-form" name="submit-form">
+              </form>
+          
+            </body>
       </html>
