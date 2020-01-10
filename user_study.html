@@ -4,6 +4,9 @@ title: "User Study for Music Generation"
 permalink: /music_generation/
 author_profile: true
 --- -->
+
+<script src="assets/lib/jquery/jquery-3.1.1.min.js"></script>
+
 <head>
         <style type="text/css">
           .column {
@@ -60,40 +63,105 @@ author_profile: true
                           if(handler_worst[i].checked) 
                           worst_choice = handler_worst[i].value; 
                       };
-                      if (background == '0' || best_choice == '0' || worst_choice == '0') {
-                          alert("Warning! You haven't finish some options!!");
-                      } else if (best_choice == worst_choice) {
-                          alert("Warning! You choose the same option for the best and worst!!");
-                      } else {
-                          myPostToGoogle();
-                          alert('Thanks you!');
-                          window.location.reload();
-                      };
+                      var better_sample = []
+                      // get best sample
+                      console.log(handler_best.length);
+
+                      for(var i=0;i< handler_best.length;i++) { 
+                            q_index = parseInt(i/2);
+                            if(handler_best[i].checked) 
+                                better_sample[q_index] = handler_best[i].value;
+                                // console.log('q_index:', q_index,handler_best[i].value )
+                            // better_sample.push(handler_best[i].value); 
+                        };
+
+                      if (better_sample.length!=3)
+                        alert('Non complete answer!');
+                      
+                      var flag = 0
+                      for(var i=0;i< better_sample.length;i++) { 
+                        console.log("i",i)
+
+                        if (better_sample[i] == null){
+                            console.log("check")
+                            flag =1;
+                            break;
+                        }
+                      }
+                      console.log("flag",flag)
+
+                      if (flag==1)
+                        alert('Non complete answer!');
+
+                    //   alert('Thanks you!');
+                    //    console.log(better_sample.includes("Sample 1."));
+                       console.log("Null",better_sample[0] == null)
+                       console.log("Null",better_sample[1] == null)
+                       console.log("Null",better_sample[2] == null)
+
+                       console.log(better_sample.length);
+                       console.log(flag);
+
+                       console.log(better_sample);
+                       submitHIT(better_sample);
+
+                    //   if (background == '0' || best_choice == '0' || worst_choice == '0') {
+                    //       alert(better_sample.length)
+                    //       alert(better_sample[0].value,better_sample[1].value,better_sample[2].value,better_sample[3].value );
+
+                        //   alert("Warning! You haven't finish some options!!");
+                    //   } else if (best_choice == worst_choice) {
+                    //       alert("Warning! You choose the same option for the best and worst!!");
+                    //   } else {
+                    //     //   alert('Thanks you!');
+                    //     alert(handler_background);
+
+                        //   window.location.reload();
+                      
                   };
               </script>
-              
-              <!-- for google form submit -->
-              <!-- <script language="javascript" type="text/javascript">
-                  function myPostToGoogle() {
-                      var field2 = $("input[type='radio'][name='background']:checked").val();
-                      var field3 = $("input[type='radio'][name='best_choice']:checked").val();
-                      var field4 = $("input[type='radio'][name='worst_choice']:checked").val();
-                      $.ajax({
-                          url: "https://docs.google.com/forms/d/e/1FAIpQLSeb0Dz_tRzTmZ21jXV66PQ1xrQqeCPk6TISAGQh9b_0GtuhTg/formResponse",
-                          data: {"entry.44284425": sampleIndex, "entry.1405676118": field2, "entry.1813362143": field3, "entry.992626456": field4},
-                          type: "POST",
-                          dataType: "xml",
-                          statusCode: {
-                              0: function() {
-                              },
-                              200: function() {  
-                              },
-                              400: function() {
-                              }
-                          }
-                      });
+
+              <script language="javascript" type="text/javascript"> 
+
+                // for Mturk submit
+                  var state = {
+                    taskIndex: 0,
+                    taskInputs: {}, 
+                    taskOutputs: [],
+                    assignmentId: gup("assignmentId"),
+                    workerId: gup("workerId"),
+                    };      
+
+                  function gup(name) {
+                    var regexS = "[\\?&]"+name+"=([^&#]*)";
+                    var regex = new RegExp( regexS );
+                    var tmpURL = window.location.href;
+                    var results = regex.exec( tmpURL );
+                    if (results == null) return "";
+                    else return results[1];
+                    }
+                  function addHiddenField(form, name, value) {
+                    // form is a jQuery object, name and value are strings
+                    var input = $("<input type='hidden' name='" + name + "' value=''>");
+                    input.val(value);
+                    form.append(input);
+                    }
+
+                  function submitHIT(better_sample) {
+                    //   var field2 = $("input[type='radio'][name='background']:checked").val();
+                    //   var field3 = $("input[type='radio'][name='best_choice']:checked").val();
+                    //   var field4 = $("input[type='radio'][name='worst_choice']:checked").val();
+                    console.log("In hit",better_sample);
+                    var form = $("#submit-form");
+                    addHiddenField(form, 'assignmentId', state.assignmentId);
+                    addHiddenField(form, 'workerId', state.workerId);
+                    addHiddenField(form, 'result', better_sample);
+                    submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit"
+                    $("#submit-form").attr("action", submitUrl); 
+                    $("#submit-form").attr("method", "POST"); 
+                    $("#submit-form").submit();
                   };
-              </script> -->
+              </script>
               
               <!-- for random -->
               <script>
@@ -152,7 +220,7 @@ author_profile: true
                                   <form>
                                       <input type="radio" name="best_choice" value="Sample 1."> Sample 1. &nbsp;&nbsp;&nbsp;
                                       <input type="radio" name="best_choice" value="Sample 2."> Sample 2. &nbsp;&nbsp;&nbsp;  
-                                      <input type="radio" name="best_choice" value="Sample 3."> Sample 3.
+                                      <!-- <input type="radio" name="best_choice" value="Sample 3."> Sample 3. -->
                                   </form>
                               </li>
                               
@@ -189,7 +257,7 @@ author_profile: true
                               <form>
                                   <input type="radio" name="best_choice" value="Sample 1."> Sample 1. &nbsp;&nbsp;&nbsp;
                                   <input type="radio" name="best_choice" value="Sample 2."> Sample 2. &nbsp;&nbsp;&nbsp;  
-                                  <input type="radio" name="best_choice" value="Sample 3."> Sample 3.
+                                  <!-- <input type="radio" name="best_choice" value="Sample 3."> Sample 3. -->
                               </form>
                           </li>
                           
@@ -197,7 +265,7 @@ author_profile: true
                   </div>
               </div>
       
-      
+              <!-- pair3 -->
               <div class="row">
                       <div class="column">
           
@@ -226,14 +294,49 @@ author_profile: true
                                   <form>
                                       <input type="radio" name="best_choice" value="Sample 1."> Sample 1. &nbsp;&nbsp;&nbsp;
                                       <input type="radio" name="best_choice" value="Sample 2."> Sample 2. &nbsp;&nbsp;&nbsp;  
-                                      <input type="radio" name="best_choice" value="Sample 3."> Sample 3.
+                                      <!-- <input type="radio" name="best_choice" value="Sample 3."> Sample 3. -->
                                   </form>
                               </li>
                               
                           </ol>
                       </div>
-                  </div>
-      
+              </div>
+
+              <!-- pair4 -->
+              <!-- <div class="row">
+                    <div class="column">
+        
+                        <h1 id="header5"></h1>
+                        <script>
+                            document.getElementById("header5").innerHTML = "Sample 4 " + sampleIndex; 
+                        </script>
+                        
+                        <div id="audio_content_4"></div>
+                        
+                        <script>
+                            var link1 = data[sampleIndex][2];
+                            var link2 = data[sampleIndex][4];
+                            var link3 = data[sampleIndex][6];
+                            document.getElementById("audio_content_4").innerHTML = 'Sample 1.<br><audio controls controlsList="nodownload"><source src="' + link1 + '" type="audio/mpeg"></audio><br><br>';
+                            document.getElementById("audio_content_4").innerHTML += 'Sample 2.<br><audio controls controlsList="nodownload"><source src="' + link2 + '" type="audio/mpeg"></audio><br><br>';
+                            // document.getElementById("audio_content_2").innerHTML += 'Sample 3.<br><audio controls controlsList="nodownload"><source src="' + link3 + '" type="audio/mpeg"></audio><br><br>';
+                        </script>
+                    </div>
+                    <div class="column">
+                        <h1>Question 4</h1>
+                        <ol>
+                            
+                            <li>
+                                Which sample is the best?
+                                <form>
+                                    <input type="radio" name="best_choice" value="Sample 1."> Sample 1. &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="best_choice" value="Sample 2."> Sample 2. &nbsp;&nbsp;&nbsp;  
+                                </form>
+                            </li>
+                            
+                        </ol>
+                    </div>
+              </div> -->
       
               <!-- submit button -->
               <p>
