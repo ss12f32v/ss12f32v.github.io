@@ -145,26 +145,37 @@ author_profile: true
                     var input = $("<input type='hidden' name='" + name + "' value=''>");
                     input.val(value);
                     form.append(input);
+                    console.log('form',form,name,value)
+                    
                     }
 
                   function submitHIT(better_sample) {
-                    //   var field2 = $("input[type='radio'][name='background']:checked").val();
-                    //   var field3 = $("input[type='radio'][name='best_choice']:checked").val();
-                    //   var field4 = $("input[type='radio'][name='worst_choice']:checked").val();
+                    submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit";
                     console.log("In hit",better_sample);
-                    var form = $("#submit-form");
-  
-                    addHiddenField(form, 'assignmentId', state.assignmentId);
-                    console.log("hitid",gup("hitId"))
 
+
+                    var form = $("#submit-form");
+                    // addHiddenField(form, 'assignmentId', state.assignmentId);
+                    // addHiddenField(form, 'workerId', state.workerId);
+                    // addHiddenField(form, 'result', 'better_sample');
+
+                    form.append('assignmentId',state.assignmentId);
+                    form.append('workerId',state.workerId);
+                    form.append('result', better_sample);
+
+                    
+
+                    console.log("hitid",gup("hitId"))
                     console.log(state.assignmentId)
                     console.log(state.workerId)
 
-                    addHiddenField(form, 'workerId', state.workerId);
-                    // addHiddenField(form, 'result', better_sample);
+                    
                     submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit";
+
+                    
                     $("#submit-form").attr("action", submitUrl); 
-                    $("#submit-form").attr("method", "POST"); 
+                    $("#submit-form").attr("method", "POST");var formData = $('#submit-form').serializeArray();
+                    console.log(formData);
                     $("#submit-form").submit();
                     alert("Thanks!")
                   };
