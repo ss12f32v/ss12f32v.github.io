@@ -154,6 +154,9 @@ author_profile: true
                     console.log("In hit",better_sample);
                     var form = $("#submit-form");
                     addHiddenField(form, 'assignmentId', state.assignmentId);
+                    console.log(state.assignmentId)
+                    console.log(state.workerId)
+
                     addHiddenField(form, 'workerId', state.workerId);
                     addHiddenField(form, 'result', better_sample);
                     submitUrl = "https://workersandbox.mturk.com/mturk/externalSubmit"
