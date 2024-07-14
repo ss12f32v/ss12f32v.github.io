@@ -1,0 +1,21 @@
+
+
+- company: "Positive Grid"
+  logo: "assets/img/PG-Logo.png"
+  topics: "Guitar tone modeling"
+  # advisors: "Woosong Choi"
+  duration: "Feb 2024 - Now"
+
+
+- company: "Sony Research"
+  logo: "assets/img/Sony-Logo.png"
+  topics: "Unsupervised guitar tone modeling"
+  advisors: "Woosong Choi"
+  duration: "July 2023 - Jan 2024"
+
+
+- company: "Taiwan AI Labs"
+  logo: "assets/img/AI-Labs.png"
+  topics: "Guitar tab generation and transcription"
+  # advisors: "Woosong Choi"
+  duration: "July 2020 - June 2022"
