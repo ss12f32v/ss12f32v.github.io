@@ -3,7 +3,7 @@ main:
   - title: "Towards zero-shot amplifier modeling: One-to-many amplifier modeling via tone embedding control"
     authors: <strong>Yu-Hua Chen</strong>, Yen-Tung Yeh, Yuan-Chiao Cheng, Jui-Te Wu, Yu-Hsiang Ho, Jyh-Shing Roger Jang, and Yi-Hsuan Yang,
     # conference_short: ISMIR
-    conference: Int. Society for Music Information Retrieval Conference 2024
+    conference: International Society for Music Information Retrieval Conference 2024
     # pdf: https://arxiv.org/pdf/2306.00988.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
     # bibtex: https://bib.yliu.me/MICCAI23.txt
@@ -24,7 +24,7 @@ main:
   - title: "Neural amplifier modelling with several GAN variants"
     authors: <strong>Yu-Hua Chen</strong>, Woosung Choi, WeiHsiang Liao, Marco A. Martinez Ramirez, Kin Wai Cheuk, Yi-Hsuan Yang, and Yuki Mitsufuji,
     # conference_short: DAFx
-    conference:  Int. Society for Music Information Retrieval Conference 2023, LBD (late-breaaking and demo paper)
+    conference:  International Society for Music Information Retrieval Conference 2023, LBD (late-breaaking and demo paper)
     pdf: https://ismir2023program.ismir.net/lbd_364.html
     demo: https://yu-hua.notion.site/Demo-Pages-007b84da1a4f411090a1c9243602a9ab
 
@@ -39,7 +39,7 @@ main:
   - title: "Automatic composition of guitar tabs by Transformers and groove modeling"
     authors: <strong>Yu-Hua Chen</strong>, Yu-Siang Huang, Wen-Yi Hsiao, and Yi-Hsuan Yang
     # conference_short: DAFx
-    conference:  Int. Society for Music Information Retrieval Conference 2020
+    conference:  International Society for Music Information Retrieval Conference 2020
     pdf: https://arxiv.org/abs/2008.01431
     # code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training    
     demo: https://ss12f32v.github.io/Guitar-Transformer-Demo/
@@ -48,7 +48,7 @@ main:
   - title: "Demonstration of PerformanceNet: A convolutional neural network model for score-to-audio music generation"
     authors: <strong>Yu-Hua Chen</strong>, Bryan Wang and Yi-Hsuan Yang
     # conference_short: DAFx
-    conference:  Int. Joint Conf. Artificial Intelligence 2019, demo paper
+    conference:  International Joint Conf. Artificial Intelligence 2019, demo paper
     pdf: https://arxiv.org/pdf/1905.11689.pdf
     # image: ./assets/img/demo_per.png
 
