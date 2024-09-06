@@ -4,9 +4,9 @@ main:
     authors: <strong>Yu-Hua Chen</strong>, Yen-Tung Yeh, Yuan-Chiao Cheng, Jui-Te Wu, Yu-Hsiang Ho, Jyh-Shing Roger Jang, and Yi-Hsuan Yang,
     # conference_short: ISMIR
     conference: International Society for Music Information Retrieval Conference 2024
-    # pdf: https://arxiv.org/pdf/2306.00988.pdf
+    pdf: https://arxiv.org/abs/2407.10646
     # code: https://github.com/MrGiovanni/ContinualLearning
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    demo: https://ss12f32v.github.io/Guitar-Zero-Shot/
     # image: ./assets/img/teaser_example_2.png
     # notes: Done with a collabaration between Positive Grid
 
